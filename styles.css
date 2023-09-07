@@ -7,7 +7,7 @@ body {
   display: flex;
   align-items: flex-end;
   min-height: 150px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .contenedor-producto {
@@ -28,4 +28,14 @@ body {
   height: 150px;
   transition: 500ms;
   opacity: 1;
+}
+
+.contenedor-carrusel {
+  position: absolute
+}
+
+.contenedor-carrusel .paginacion-carrussel {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }

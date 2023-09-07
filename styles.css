@@ -1,0 +1,31 @@
+body {
+  background-color: gray;
+}
+
+
+.productos {
+  display: flex;
+  align-items: flex-end;
+  min-height: 150px;
+  position: absolute;
+}
+
+.contenedor-producto {
+  width: 120px;
+  height: 100px;
+  transition: 500ms;
+  display: flex;
+  align-items: center;
+  opacity: .5;
+  background-color: white;
+  border-radius: 15px;
+}
+.contenedor-producto img {
+  width: 100%;
+}
+
+.producto-seleccionado {
+  height: 150px;
+  transition: 500ms;
+  opacity: 1;
+}

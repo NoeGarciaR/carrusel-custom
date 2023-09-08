@@ -46,8 +46,14 @@
       '.paginacion-siguiente',
       '.paginacion-anterior',
       '.dots-paginacion',
-      30
+      30,
+      {
+        callBackCambioIndex: (index) => {
+          console.log(index);
+        }
+      }
     );
+    _carruselCustom.seleccionarProductoConIndex(0);
   </script>
 </body>
 </html>

@@ -4,6 +4,8 @@ class CarruselCustom {
   selectorPaginacionSiguiente;
   selectorPaginacionAnterior;
   selectorDotsPaginacion;
+  
+  callBackCambioIndex = (index) => {};
 
   productos;
   paginacionSiguiente;
@@ -22,7 +24,8 @@ class CarruselCustom {
     selectorPaginacionSiguiente, 
     selectorPaginacionAnterior,
     selectorDotsPaginacion,
-    separacionEntreProductos
+    separacionEntreProductos,
+    callBacks
     ) {
     this.selectorContendorPrincipal = selectorContenedorPrincipal;
     this.selectorProducto = selectorProducto;
@@ -36,6 +39,8 @@ class CarruselCustom {
     this.paginacionAnterior = document.querySelector(this.selectorPaginacionAnterior);
 
     this.barridoInicial();
+
+    this.setCallBacks(callBacks);
   }
 
   // Barrido inicial de las imagenes
@@ -70,18 +75,17 @@ class CarruselCustom {
     });
   }
 
+  setCallBacks(callBacks) {
+    if(callBacks.callBackCambioIndex) {
+      this.callBackCambioIndex = callBacks.callBackCambioIndex;
+    }
+  }
+
   eliminarClase(clase) {
     for (const producto of this.productos.entries()) {
       producto[1].classList.remove(clase);
     }
   }
-
-  // seleccionarProducto(event) {
-  //   eliminarClase(this._claseProductoSeleccionado);
-  //   let _contenedor = event.target.parentElement;
-  //   _contenedor.classList.add(this._claseProductoSeleccionado);
-  //   tarjetProductoActual = productos[indexActual];
-  // }
 
   seleccionarProductoConIndex(index) {
     this.eliminarClase(this._claseProductoSeleccionado);
@@ -100,6 +104,7 @@ class CarruselCustom {
     // seleccionamos el producto especifico
     this.productos[_index].classList.add(this._claseProductoSeleccionado);
     this.indexActual = _index;
+    this.callBackCambioIndex(this.indexActual);
   }
 
   accionClickIconoPaginacion(event) {

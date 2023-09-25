@@ -1,0 +1,25 @@
+.productos-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    align-items: end;
+}
+
+.contenedor-producto-mobile {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-producto-mobile img {
+    width: inherit;
+}
+
+.contenedor-carrusel-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
